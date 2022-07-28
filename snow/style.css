@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: radial-gradient(at bottom, #333851, #000000);
+  /* overflow: hidden; */
+}
+.snow {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(147, 96, 183);
+  animation: snowFall 10s linear infinite;
+  box-shadow: 2px 2px 4px rgb(164, 116, 198), -2px 2px 4px rgb(164, 116, 198),
+    2px -2px 4px rgb(164, 116, 198), -2px -2px 4px rgb(164, 116, 198);
+}
+
+@keyframes snowFall {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-18px, 20vh);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(18px, 40vh);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-18px, 60vh);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(18px, 80vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(100vh);
+  }
+}
+.snow:nth-child(2n) {
+  animation-duration: 8s;
+  animation-delay: 0;
+}
+.snow:nth-child(3n) {
+  animation-duration: 7s;
+  animation-delay: 1.5s;
+}
+.snow:nth-child(7n) {
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+.snow:nth-child(5n) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation-duration: 10s;
+  animation-delay: 0;
+}
+.window {
+  position: relative;
+}
+.bigWindow {
+  position: absolute;
+  width: 230px;
+  height: 190px;
+  background-color: rgba(205, 170, 96, 0.402);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 50px;
+  right: 100px;
+}
+.smallWindow {
+  width: 90px;
+  height: 68px;
+  background-color: rgba(223, 156, 79, 0.909);
+  border-radius: 5px;
+  animation: smallWindowColor 5s infinite;
+}
+@keyframes smallWindowColor {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
